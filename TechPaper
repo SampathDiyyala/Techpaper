@@ -1,0 +1,522 @@
+# Abstract
+
+Flexbox is a one-dimensional layout method for arranging items in rows or columns and Grid is a two-dimensional layout system with rows and columns at a time.
+
+Flexbox layout allows you to easily format HTML. Flexbox makes it simple to align items vertically and horizontally using rows and columns.
+
+Grid making it easier to design web pages without having to use floats and positioning. Like tables, grid layout allow us to align elements into columns and rows.
+
+CSS grid and flexbox can work together in a layout. You can use flexbox inside CSS grid and vice versa. For instance, you could use flexbox to center an element like a button both vertically and horizontally within a particular grid cell.
+
+
+
+# INTRODUCTION
+## CSS
+Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML.
+
+## Flexbox and Grid
+
+**Flexbox:** Flexbox is a one-dimensional layout method for arranging items in rows or columns. It is helpful in allocating and aligning the space among items in a container (made of grids).
+
+Flexbox layout allows you to easily format HTML. Flexbox makes it simple to align items vertically and horizontally using rows and columns.
+
+It's easy to learn, is supported in all modern browsers, and it doesn't take that long to figure out the basics. Flexbox is great to use for the general layout of your website or app. 
+
+ **Grid:**  Grid is a two-dimensional layout system with rows and columns at a time, making it easier to design web pages without having to use floats and positioning. Like tables, grid layout allow us to align elements into columns and rows.
+
+# Difference Between Grid and Flexbox:
+
+The main difference between CSS Flexbox and Grid is Flexbox is a One-dimensional layout and Grid is Two-dimensional layout.
+
+**Dimensionality and Flexibility:**
+
+* Flexbox offers greater control over alignment and space distribution between items. Being one-dimensional, Flexbox only deals with either columns or rows.
+* Grid has two-dimension layout capabilities which allow flexible widths as a unit of length. This compensates for the limitations in Flex.
+
+**Alignment:**
+
+* Flex Direction allows developers to align elements vertically or horizontally, which is used when developers create and reverse rows or columns. 
+* CSS Grid deploys fractional measure units for grid fluidity and auto-keyword functionality to automatically adjust columns or rows.
+
+**Item Management:**
+
+* Flex Container is the parent element while Flex Item represents the children. The Flex Container can ensure balanced representation by adjusting item dimensions. This allows developers to design for fluctuating screen sizes.
+* Grid supports both implicit and explicit content placement. Its inbuilt automation allows it to automatically extend line items and copy values into the new creation from the preceding item.
+
+## Features of Flexbox and Grid 
+Flexbox: It can push content element to extreme alignment.
+
+Grid: It can flex combination of items through space occupying Features.
+
+# Terminology and Properties of Flexbox and Grid
+
+## Flexbox Terminology:
+[Flexbox Terminology diagram](https://www.freecodecamp.org/news/content/images/2019/10/image-32.png)
+
+It is important to understand the associated terminology. 
+
+**Main axis**: The main axis of a flex container is the primary axis along which flex items are laid out. The direction is based on the flex-direction property.
+
+**Main start and Main end**: The flex items are placed within the container starting on the main-start side and going toward the main-end side.
+
+**Main size:** The width or height of a flex container or flex item, whichever is in the main dimension, is that box’s 
+main size. Its main size property is thus either its width or height property, whichever is in the main dimension.
+
+**Cross axis:** The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.
+
+**Cross start and Cross end:** Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.
+cross size: The width or height of a flex item, whichever is in the cross dimension, is the item's cross size. The cross size property is whichever of ‘width’ or ‘height’ that is in the cross dimension.
+
+## Flexbox Properties:
+Flexbox Properties are two types they are :-
+1. Container Properties
+1. Item Properties
+
+### Container Properties 
+A flex container expands items to fill available free space or shrinks them to prevent overflow.
+
+[container.img](https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg)
+
+* display flex
+* flex-direction
+* flex-wrap
+* flex-flow
+* justify-content
+* align-items
+* align-content
+
+**display flex :** It tells your browser, "I wanna use flexbox with this container, please."
+
+[display-block.img](https://cdn-media-1.freecodecamp.org/images/ChnkgUaWEN6dmtS4EQCG60uqIjZVphsErq91)
+
+This will initialize this container as a flex container and apply some default flex properties.
+
+[display-flex.img](https://cdn-media-1.freecodecamp.org/images/6WwoIEc45lUHUcFQCmD8GmziiISm2lO64Y1-)
+```css
+*Syntax :*
+
+display: flexbox | inline-flex;
+```
+Eg:
+
+The column value stacks the flex items vertically (from top to bottom):
+```css
+.flex-container {
+
+  display: flex;
+
+  flex-direction: column;
+}
+```
+The column-reverse value stacks the flex items vertically (but from bottom to top):
+```css
+.flex-container {
+
+  display: flex;
+
+  flex-direction: column-reverse;
+}
+```
+The row value stacks the flex items horizontally (from left to right):
+```css
+.flex-container {
+
+  display: flex;
+
+  flex-direction: row;
+}
+```
+**flex direction :** It allows you to control how the items in the container display. Do you want them left to right, right to left, top to bottom, or bottom to top? You can do all of these easily by setting the flex-direction of the container.
+
+[flex-direction.img](https://cdn-media-1.freecodecamp.org/images/wEg7wdKEfv9-bqaiB-t9hzOapBPiqZVYNFIh)
+
+It can also set flex-direction to row-reverse and column-reverse.
+
+[flex-direction.img](https://cdn-media-1.freecodecamp.org/images/zYdQGSmhtMyqcAbEUDoEehohC8E-gtgvQx6b)
+```css
+*Syntax :*
+
+flex-direction: row | row-reverse | column | column-reverse;
+```
+**justify content :**  It is a property to align items in the container along the main axis (see terminology diagram above). This changes depending on how content is displayed.
+
+[justify-content.img](https://cdn-media-1.freecodecamp.org/images/OBGVr-DdHiQ2y9VOWuhXqXeGnFnyDSBTx7hv)
+```css
+*Syntax :*
+
+justify-content: flex-start | flex-end | center space-between | space-around;
+```
+Eg:
+
+The center value aligns the flex items at the center of the container:
+```css
+.flex-container {
+
+  display: flex;
+
+  justify-content: center;
+
+}
+```
+**align items :** It allows us to align items along the cross axis (see terminology diagram above). This allows content to be positioned in many different ways using justify content and align items together.
+
+[align-items.img](https://cdn-media-1.freecodecamp.org/images/UgsULw0Kk49l-l1wSzeurYNJKCmcA-01oE8a)
+```css
+*Syntax :*
+
+align-items: flex-start | flex-end | center | baseline | stretch;
+```
+Eg:
+
+The flex-start value aligns the flex items at the top of the container:
+```css
+.flex-container {
+
+  display: flex;
+
+  height: 200px;
+
+  align-items: flex-start;
+
+}
+```
+**align content :** It is used for aligning items with multiple lines. It is for aligning on the cross axis and will have no effect on content that is one line.
+```css
+*Syntax :*
+
+align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+```
+The space-between value displays the flex lines with equal space between them:
+```css
+.flex-container {
+
+  display: flex;
+
+  height: 600px;
+
+  flex-wrap: wrap;
+
+  align-content: space-between;
+
+}
+```
+**flex wrap :** Flexbox by default will try to fit all elements into one row. However, you can change this with the flex-wrap property. There are three values you can use to determine when elements go to another row.
+
+The default value is flex-wrap: nowrap. This will cause everything to stay in one row from left to right.
+
+wrap-reverse also allows items to pop to the next row but this time the items are displayed from right to left.
+
+```css
+*Syntax :*
+
+flex-wrap: nowrap | wrap | wrap-reverse;
+```
+Eg:
+
+The wrap value specifies that the flex items will wrap if necessary:
+```css
+.flex-container {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+}
+```
+The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order:
+```css
+.flex-container {
+
+  display: flex;
+
+  flex-wrap: wrap-reverse;
+}
+```
+**flex flow :** flex-flow combines the use of flex-wrap and flex-direction into one property. It is used by first setting the direction and then the wrap. Here is an example: flex-flow: column wrap;
+```css
+*Syntax :*
+
+flex-flow: <‘flex-direction’> || <‘flex-wrap’>
+```
+### Item Properties
+
+A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties. flex-basis. Specifies the initial length of a flex item. flex-grow. Specifies how much a flex item will grow relative to the rest of the flex items inside the same container.
+
+[Items.img](https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg)
+
+* order
+* flex-grow
+* flex-shrink
+* flex-basis
+* flex
+* align-self
+
+**order :** Specifies the order of the flex items inside the same container.
+
+[order.img](https://css-tricks.com/wp-content/uploads/2018/10/order.svg)
+```css
+*Syntax :*
+
+.item {
+
+  order: 5;
+}
+```
+**flex-grow :** Specifies how much a flex item will grow relative to the rest of the flex items inside the same container.
+
+[flex-grow.img](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+```css
+*Syntax :*
+
+.item {
+
+  flex-grow: 4;
+
+}
+```
+**flex-shrink :** Specifies how much a flex item will shrink relative to the rest of the flex items inside the same container.
+```css
+*Syntax :*
+
+.item {
+
+  flex-shrink: 3;
+}
+```
+**flex-basis :** Specifies the initial length of a flex item.
+```css
+*Syntax :*
+
+.item {
+
+  flex-basis:  | auto;
+
+}
+```
+**flex :** A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties.
+```css
+*Syntax :*
+
+.item {
+
+  flex: none
+
+}
+```
+**align-self :** Specifies the alignment for a flex item .
+
+[align-self.img](https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg)
+```css
+*Syntax :*
+
+.item {
+
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+}
+```
+## Grid Properties:
+Grid Properties are also two types they are :-
+1. Container Properties
+1. Item Properties
+
+[grid-properties.img](https://media.geeksforgeeks.org/wp-content/uploads/output-300.png)
+
+### Container Properties 
+
+To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid . Grid containers consist of grid items, placed inside columns and rows.
+
+[container.img](https://www.includehelp.com/code-snippets/Images/grid-container-in-css-example-1.jpg)
+
+* grid-template-rows
+* grid-template-columns
+* grid-template-area
+* grid-auto-rows
+* grid-auto-columns
+* grid-auto-flow 
+
+**grid-template-rows :** Specifies the size of the rows.
+```css
+*Eg :*
+
+#grid {
+
+  display: grid;
+
+  height: 100px;
+
+  grid-template-rows: 30px 1fr;
+
+}
+```
+**grid-template-columns :** This specifies the size of the columns.
+```css
+*Eg :*
+
+#grid {
+
+  display: grid;
+
+  width: 100%;
+
+  grid-template-columns: 50px 1fr;
+
+}
+```
+**grid-template-areas :** This specifies the grid layout using named items.
+```css
+*Eg :*
+
+#grid {
+  display: grid;
+
+  width: 100%;
+
+  height: 250px;
+
+  grid-template-areas: "head head";
+
+  grid-template-rows: 50px 1fr 30px;
+
+  grid-template-columns: 150px 1fr;
+
+}
+```
+**grid-auto-rows :** This specifies the auto size of the rows.
+```css
+*Eg :*
+
+#grid {
+
+  width: 200px;
+
+  display: grid;
+
+  grid-template-areas: "a a";
+
+  gap: 10px;
+
+  grid-auto-rows: 100px;
+
+}
+```
+**grid-auto-columns :** This specifies the auto size of the columns.
+```css
+#grid {
+
+  height: 100px;
+
+  display: grid;
+
+  grid-template-areas: "a a";
+
+  gap: 10px;
+
+  grid-auto-columns: 200px;
+
+}
+```
+**grid-auto-flow :** This specifies how to place auto-placed items, and the auto size of the row.
+```css
+*Eg :*
+
+#grid {
+
+  height: 200px;
+
+  width: 200px;
+
+  display: grid;
+
+  gap: 10px;
+
+  grid-template: repeat(4, 1fr);
+
+  grid-auto-flow: column; 
+
+}
+```
+### Item Properties
+
+It defines where the item will start, and where the item will end.
+
+[item.img](https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row-start-end-01.svg)
+
+* grid-column
+* grid-column-start
+* grid-column-end
+* grid-row
+* grid-row-start
+* grid-row-end
+* grid-area
+* justify-self
+
+*Eg :*
+
+**grid-column | grid-row :**
+```css
+.item {
+
+  grid-column: 3 / span 2;
+
+  grid-row: third-line / 4;
+
+}
+
+.item-a {
+
+  grid-column-start: 2;
+
+  grid-column-end: five;
+
+  grid-row-start: row1-start;
+
+  grid-row-end: 3;
+}
+```
+**grid-area :**
+```css
+.item-b {
+
+  grid-area: header;
+
+}
+```
+**justify-self :**
+```css
+*Syntax :
+
+.item {
+
+  justify-self: start | end | center | stretch;
+
+}
+
+*Eg :*
+
+.item-a {
+
+  justify-self: start;
+
+}
+```
+# Conclusions
+
+Covered all the most common CSS flexbox  and Grid properties. The next step is practice! Try making a few projects using flexbox and Grid so you can get used to how it works.
+
+CSS grid and flexbox can work together in a layout. You can use flexbox inside CSS grid and vice versa. For instance, you could use flexbox to center an element like a button both vertically and horizontally within a particular grid cell.
+
+# References
+
+*  Atkins Jr, Tab. "CSS For Real Pages and Apps with Flexbox." YouTube. YouTube, 10 Oct. 2013. Web. 04 Dec. 2015. <https://www.youtube.com/watch?v=FKfNbqqeGi4>.
+
+* Atkins Jr, Tab. "Tab Completion." Why Flexboxes Aren't Good for Page Layout. N.p., 13 Jan. 2013. Web. 01 Dec. 2015. <http://www.xanthir.com/blog/b4580>.
+
+* B, Pete. "Flexy Boxes." The Echoplex. N.p., n.d. Web. 28 Nov. 2015. <http://the-echoplex.net/flexyboxes/>.
+
+* Brosset, Patrick. "The Future of Layout with CSS: Grid Layouts." Medium. N.p., 26 Aug. 2015. Web. 03 Nov. 2015. <https://medium.com/@patrickbrosset/css-grid-layout-6c9cba6e8a5a>.
+
+* Coyier, Chris. "A Complete Guide to Flexbox." CSS-Tricks. N.p., n.d. Web. 27 Oct. 2015. <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>.
+* [flexbox](https://cssreference.io/flexbox/)
+
+* [Grid](https://cssreference.io/css-grid/)
